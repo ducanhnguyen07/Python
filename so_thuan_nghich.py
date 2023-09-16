@@ -13,3 +13,27 @@ for i in a2:
     s = conv(i, 3) 
     if s == ''.join(reversed(s)):
         a3.append(i)
+
+a, b, m = map(int, input().split())
+cnt = 0
+
+if m == 2:
+    for i in a2:
+        if i >= a and i <= b:
+            cnt += 1
+        elif i > b:
+            break
+elif m == 3:
+    for i in a3:
+        if i >= a and i <= b:
+            cnt += 1
+        elif i > b:
+            break
+else:
+    if a <= 1 and b >= 1:
+        cnt += 1
+
+if a == 0:
+    cnt += 1
+print(cnt)
+
