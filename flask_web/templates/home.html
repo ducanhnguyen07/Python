@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trang chủ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chào mừng đến với trang chủ</h1>
+    <p>Đăng nhập để truy cập vào các tính năng của trang web.</p>
+    <a href="{{ url_for('login') }}">Đăng nhập</a>
+    <a href="{{ url_for('signup') }}">Đăng ký tài khoản mới</a>
+</body>
+</html>

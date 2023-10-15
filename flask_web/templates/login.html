@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng nhập</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            padding: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Đăng nhập</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    {% if 'thất bại' in message %} 
+                        <li style="color: red;">{{ message }}</li>
+                    {% elif 'thành công' in message %} 
+                        <li style="color: green;">{{ message }}</li> 
+                    {% else %}
+                        <li style="color: green;">{{ message }}</li>
+                    {% endif %} 
+                    <!-- <li style="color: {% if 'danger' in message %} red {% else %} green {% endif %};">{{ message }}</li> -->
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <label for="username">Tên người dùng:</label>
+        <input type="text" name="username" required><br>
+        <label for="password">Mật khẩu:</label>
+        <input type="password" name="password" required><br>
+        <input type="submit" value="Đăng nhập">
+    </form>
+    <a href="{{ url_for('signup') }}">Chưa có tài khoản? Đăng ký ngay</a>
+</body>
+</html>

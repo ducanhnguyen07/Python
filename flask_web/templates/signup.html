@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng ký</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            padding: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Đăng ký tài khoản mới</h1>
+    <form method="POST">
+        <label for="username">Tên người dùng:</label>
+        <input type="text" name="username" required><br>
+        <label for="password">Mật khẩu:</label>
+        <input type="password" name="password" required><br>
+        <label for="confirm_password">Xác nhận mật khẩu:</label>
+        <input type="password" name="confirm_password" required><br>
+        <input type="submit" value="Đăng ký">
+    </form>
+    <a href="{{ url_for('login') }}">Đã có tài khoản? Đăng nhập ngay</a>
+</body>
+</html>
